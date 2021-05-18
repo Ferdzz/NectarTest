@@ -14,7 +14,7 @@ protocol HiveListInteractorProtocol: class {
 
 class HiveListInteractor {
     
-    private let hiveApiManager = HiveApiManager()
+    private let hiveStore = HiveStore()
     
     private weak var viewController: HiveListViewControllerProtocol?
     
@@ -24,7 +24,7 @@ class HiveListInteractor {
     
     private func fetchData() {
         self.viewController?.displayLoading(shown: true)
-        self.hiveApiManager.getHives { [weak self] (hives) in
+        self.hiveStore.getHives { [weak self] (hives) in
             self?.viewController?.show(hives: hives)
         } onError: { [weak self] (error) in
             print(error) // TODO: Handle error
@@ -34,7 +34,7 @@ class HiveListInteractor {
     }
     
     private func deleteHive(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
-        self.hiveApiManager.deleteHive(id: id) {
+        self.hiveStore.deleteHive(id: id) {
             onSuccess()
         } onError: { (error) in
             onError()
