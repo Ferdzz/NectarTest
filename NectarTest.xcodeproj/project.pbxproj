@@ -18,6 +18,8 @@
 		7DEF917126545057007AF3B1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF917026545057007AF3B1 /* UITableViewCell+Extension.swift */; };
 		7DEF917926545467007AF3B1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEF917826545467007AF3B1 /* Kingfisher */; };
 		7DEF918326546983007AF3B1 /* HiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918226546983007AF3B1 /* HiveStore.swift */; };
+		7DEF918726546D6B007AF3B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918526546D6B007AF3B1 /* Model.xcdatamodeld */; };
+		7DEF9190265471D8007AF3B1 /* PersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */; };
 		C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */; };
 		C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */; };
 		C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */; };
@@ -39,6 +41,8 @@
 		7DEF916B26544A57007AF3B1 /* HiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListInteractor.swift; sourceTree = "<group>"; };
 		7DEF917026545057007AF3B1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		7DEF918226546983007AF3B1 /* HiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveStore.swift; sourceTree = "<group>"; };
+		7DEF918626546D6B007AF3B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantContainer.swift; sourceTree = "<group>"; };
 		C8E94D77265403A600D6A2A0 /* NectarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NectarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,7 @@
 			children = (
 				C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */,
 				C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */,
+				7DEF918526546D6B007AF3B1 /* Model.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -116,20 +121,21 @@
 		7DEF914F2654301C007AF3B1 /* IO */ = {
 			isa = PBXGroup;
 			children = (
+				7DEF918E265471CC007AF3B1 /* CoreData */,
 				7DEF918126546977007AF3B1 /* Store */,
 				7DEF91522654309F007AF3B1 /* Models */,
-				7DEF91512654309B007AF3B1 /* Managers */,
+				7DEF91512654309B007AF3B1 /* ApiManagers */,
 			);
 			path = IO;
 			sourceTree = "<group>";
 		};
-		7DEF91512654309B007AF3B1 /* Managers */ = {
+		7DEF91512654309B007AF3B1 /* ApiManagers */ = {
 			isa = PBXGroup;
 			children = (
 				7DEF916226543EB9007AF3B1 /* BaseApiManager.swift */,
 				7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */,
 			);
-			path = Managers;
+			path = ApiManagers;
 			sourceTree = "<group>";
 		};
 		7DEF91522654309F007AF3B1 /* Models */ = {
@@ -154,6 +160,14 @@
 				7DEF918226546983007AF3B1 /* HiveStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		7DEF918E265471CC007AF3B1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		C8E94D6E265403A600D6A2A0 = {
@@ -268,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEF9190265471D8007AF3B1 /* PersistantContainer.swift in Sources */,
 				7DEF916326543EB9007AF3B1 /* BaseApiManager.swift in Sources */,
 				7DEF9158265430EA007AF3B1 /* HiveApiManager.swift in Sources */,
 				C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */,
@@ -277,6 +292,7 @@
 				C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */,
 				C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */,
 				7DEF916C26544A57007AF3B1 /* HiveListInteractor.swift in Sources */,
+				7DEF918726546D6B007AF3B1 /* Model.xcdatamodeld in Sources */,
 				7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +541,19 @@
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		7DEF918526546D6B007AF3B1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7DEF918626546D6B007AF3B1 /* Model.xcdatamodel */,
+			);
+			currentVersion = 7DEF918626546D6B007AF3B1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8E94D6F265403A600D6A2A0 /* Project object */;
 }

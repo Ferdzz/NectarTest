@@ -25,7 +25,7 @@ class HiveListInteractor {
     private func fetchData() {
         self.viewController?.displayLoading(shown: true)
         self.hiveStore.getHives { [weak self] (hives) in
-            self?.viewController?.show(hives: hives)
+            self?.viewController?.show(hives: hives.sorted(by: { $0.name < $1.name }))
         } onError: { [weak self] (error) in
             print(error) // TODO: Handle error
         } completion: { [weak self] in
