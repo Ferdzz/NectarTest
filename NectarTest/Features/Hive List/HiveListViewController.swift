@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HiveListViewController.swift
 //  NectarTest
 //
 //  Created by Amadou Balde on 2021-05-18.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HiveListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        self.title = NSLocalizedString("HiveList.Title", comment: "")
     }
 
 

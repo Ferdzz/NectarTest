@@ -7,22 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D5952092654295400233F8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D59520B2654295400233F8C /* Localizable.strings */; };
+		7D59521226542B7100233F8C /* HiveListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D59521026542B7100233F8C /* HiveListTableViewCell.swift */; };
+		7D59521326542B7100233F8C /* HiveListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D59521126542B7100233F8C /* HiveListTableViewCell.xib */; };
+		7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9153265430B5007AF3B1 /* Hive.swift */; };
+		7DEF9158265430EA007AF3B1 /* HiveApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */; };
 		C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */; };
 		C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */; };
-		C8E94D7F265403A600D6A2A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7E265403A600D6A2A0 /* ViewController.swift */; };
+		C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */; };
 		C8E94D82265403A600D6A2A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E94D80265403A600D6A2A0 /* Main.storyboard */; };
 		C8E94D84265403A700D6A2A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E94D83265403A700D6A2A0 /* Assets.xcassets */; };
 		C8E94D87265403A700D6A2A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E94D85265403A700D6A2A0 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D595201265428D600233F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7D595202265428D600233F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7D59520A2654295400233F8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D59520D2654297300233F8C /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7D59521026542B7100233F8C /* HiveListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListTableViewCell.swift; sourceTree = "<group>"; };
+		7D59521126542B7100233F8C /* HiveListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiveListTableViewCell.xib; sourceTree = "<group>"; };
+		7DEF9153265430B5007AF3B1 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
+		7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveApiManager.swift; sourceTree = "<group>"; };
 		C8E94D77265403A600D6A2A0 /* NectarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NectarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8E94D7E265403A600D6A2A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8E94D81265403A600D6A2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListViewController.swift; sourceTree = "<group>"; };
 		C8E94D83265403A700D6A2A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C8E94D86265403A700D6A2A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8E94D88265403A700D6A2A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,6 +48,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D5951F62654273600233F8C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C8E94D85265403A700D6A2A0 /* LaunchScreen.storyboard */,
+				C8E94D80265403A600D6A2A0 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7D5951F72654275D00233F8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */,
+				C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D5951F82654278E00233F8C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				7D5951F92654279A00233F8C /* Hive List */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7D5951F92654279A00233F8C /* Hive List */ = {
+			isa = PBXGroup;
+			children = (
+				C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */,
+			);
+			path = "Hive List";
+			sourceTree = "<group>";
+		};
+		7D5951FD2654287400233F8C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C8E94D83265403A700D6A2A0 /* Assets.xcassets */,
+				7D59520B2654295400233F8C /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		7D59520F26542B1C00233F8C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D59521026542B7100233F8C /* HiveListTableViewCell.swift */,
+				7D59521126542B7100233F8C /* HiveListTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7DEF914F2654301C007AF3B1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF91522654309F007AF3B1 /* Models */,
+				7DEF91512654309B007AF3B1 /* Managers */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7DEF91512654309B007AF3B1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7DEF91522654309F007AF3B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF9153265430B5007AF3B1 /* Hive.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C8E94D6E265403A600D6A2A0 = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +144,12 @@
 		C8E94D79265403A600D6A2A0 /* NectarTest */ = {
 			isa = PBXGroup;
 			children = (
-				C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */,
-				C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */,
-				C8E94D7E265403A600D6A2A0 /* ViewController.swift */,
-				C8E94D80265403A600D6A2A0 /* Main.storyboard */,
-				C8E94D83265403A700D6A2A0 /* Assets.xcassets */,
-				C8E94D85265403A700D6A2A0 /* LaunchScreen.storyboard */,
+				7D5951F72654275D00233F8C /* Supporting Files */,
+				7D5951F62654273600233F8C /* Storyboards */,
+				7D59520F26542B1C00233F8C /* Cells */,
+				7D5951F82654278E00233F8C /* Features */,
+				7D5951FD2654287400233F8C /* Assets */,
+				7DEF914F2654301C007AF3B1 /* API */,
 				C8E94D88265403A700D6A2A0 /* Info.plist */,
 			);
 			path = NectarTest;
@@ -108,6 +196,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"fr-CA",
 			);
 			mainGroup = C8E94D6E265403A600D6A2A0;
 			productRefGroup = C8E94D78265403A600D6A2A0 /* Products */;
@@ -125,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8E94D87265403A700D6A2A0 /* LaunchScreen.storyboard in Resources */,
+				7D59521326542B7100233F8C /* HiveListTableViewCell.xib in Resources */,
+				7D5952092654295400233F8C /* Localizable.strings in Resources */,
 				C8E94D84265403A700D6A2A0 /* Assets.xcassets in Resources */,
 				C8E94D82265403A600D6A2A0 /* Main.storyboard in Resources */,
 			);
@@ -137,19 +228,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E94D7F265403A600D6A2A0 /* ViewController.swift in Sources */,
+				7DEF9158265430EA007AF3B1 /* HiveApiManager.swift in Sources */,
+				C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */,
+				7D59521226542B7100233F8C /* HiveListTableViewCell.swift in Sources */,
 				C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */,
 				C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */,
+				7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7D59520B2654295400233F8C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D59520A2654295400233F8C /* en */,
+				7D59520D2654297300233F8C /* fr-CA */,
+			);
+			name = Localizable.strings;
+			path = NectarTest/Storyboards;
+			sourceTree = SOURCE_ROOT;
+		};
 		C8E94D80265403A600D6A2A0 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8E94D81265403A600D6A2A0 /* Base */,
+				7D595202265428D600233F8C /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -157,7 +261,7 @@
 		C8E94D85265403A700D6A2A0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8E94D86265403A700D6A2A0 /* Base */,
+				7D595201265428D600233F8C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -169,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -287,7 +393,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NectarTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +413,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NectarTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
