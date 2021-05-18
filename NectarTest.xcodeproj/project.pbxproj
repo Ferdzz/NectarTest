@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		7D59521326542B7100233F8C /* HiveListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D59521126542B7100233F8C /* HiveListTableViewCell.xib */; };
 		7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9153265430B5007AF3B1 /* Hive.swift */; };
 		7DEF9158265430EA007AF3B1 /* HiveApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */; };
+		7DEF916326543EB9007AF3B1 /* BaseApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF916226543EB9007AF3B1 /* BaseApiManager.swift */; };
+		7DEF9169265444AD007AF3B1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEF9168265444AD007AF3B1 /* Alamofire */; };
+		7DEF916C26544A57007AF3B1 /* HiveListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF916B26544A57007AF3B1 /* HiveListInteractor.swift */; };
+		7DEF917126545057007AF3B1 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF917026545057007AF3B1 /* UITableViewCell+Extension.swift */; };
+		7DEF917926545467007AF3B1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7DEF917826545467007AF3B1 /* Kingfisher */; };
 		C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */; };
 		C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */; };
 		C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */; };
@@ -29,6 +34,9 @@
 		7D59521126542B7100233F8C /* HiveListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiveListTableViewCell.xib; sourceTree = "<group>"; };
 		7DEF9153265430B5007AF3B1 /* Hive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hive.swift; sourceTree = "<group>"; };
 		7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveApiManager.swift; sourceTree = "<group>"; };
+		7DEF916226543EB9007AF3B1 /* BaseApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiManager.swift; sourceTree = "<group>"; };
+		7DEF916B26544A57007AF3B1 /* HiveListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveListInteractor.swift; sourceTree = "<group>"; };
+		7DEF917026545057007AF3B1 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		C8E94D77265403A600D6A2A0 /* NectarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NectarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +50,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEF917926545467007AF3B1 /* Kingfisher in Frameworks */,
+				7DEF9169265444AD007AF3B1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */,
+				7DEF916B26544A57007AF3B1 /* HiveListInteractor.swift */,
 			);
 			path = "Hive List";
 			sourceTree = "<group>";
@@ -112,6 +123,7 @@
 		7DEF91512654309B007AF3B1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				7DEF916226543EB9007AF3B1 /* BaseApiManager.swift */,
 				7DEF9157265430EA007AF3B1 /* HiveApiManager.swift */,
 			);
 			path = Managers;
@@ -123,6 +135,14 @@
 				7DEF9153265430B5007AF3B1 /* Hive.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7DEF916F26545042007AF3B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF917026545057007AF3B1 /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C8E94D6E265403A600D6A2A0 = {
@@ -145,11 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				7D5951F72654275D00233F8C /* Supporting Files */,
+				7DEF916F26545042007AF3B1 /* Extensions */,
 				7D5951F62654273600233F8C /* Storyboards */,
 				7D59520F26542B1C00233F8C /* Cells */,
 				7D5951F82654278E00233F8C /* Features */,
-				7D5951FD2654287400233F8C /* Assets */,
 				7DEF914F2654301C007AF3B1 /* API */,
+				7D5951FD2654287400233F8C /* Assets */,
 				C8E94D88265403A700D6A2A0 /* Info.plist */,
 			);
 			path = NectarTest;
@@ -171,6 +192,10 @@
 			dependencies = (
 			);
 			name = NectarTest;
+			packageProductDependencies = (
+				7DEF9168265444AD007AF3B1 /* Alamofire */,
+				7DEF917826545467007AF3B1 /* Kingfisher */,
+			);
 			productName = NectarTest;
 			productReference = C8E94D77265403A600D6A2A0 /* NectarTest.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +224,10 @@
 				"fr-CA",
 			);
 			mainGroup = C8E94D6E265403A600D6A2A0;
+			packageReferences = (
+				7DEF9167265444AD007AF3B1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7DEF917726545467007AF3B1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = C8E94D78265403A600D6A2A0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,11 +257,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DEF916326543EB9007AF3B1 /* BaseApiManager.swift in Sources */,
 				7DEF9158265430EA007AF3B1 /* HiveApiManager.swift in Sources */,
 				C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */,
 				7D59521226542B7100233F8C /* HiveListTableViewCell.swift in Sources */,
+				7DEF917126545057007AF3B1 /* UITableViewCell+Extension.swift in Sources */,
 				C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */,
 				C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */,
+				7DEF916C26544A57007AF3B1 /* HiveListInteractor.swift in Sources */,
 				7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +435,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nectartest.io.NectarTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,7 +455,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nectartest.io.NectarTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -449,6 +481,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7DEF9167265444AD007AF3B1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		7DEF917726545467007AF3B1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7DEF9168265444AD007AF3B1 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DEF9167265444AD007AF3B1 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7DEF917826545467007AF3B1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7DEF917726545467007AF3B1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8E94D6F265403A600D6A2A0 /* Project object */;
 }
