@@ -22,6 +22,10 @@ class HiveStore {
         networkReachabilityManager?.isReachable ?? false
     }
     
+    init() {
+        networkReachabilityManager?.startListening(onUpdatePerforming: { _ in })
+    }
+    
     // TODO: The CoreData handling belongs to a dedicated handler
     func getHives(
         onSuccess: @escaping ([Hive]) -> Void,
@@ -30,6 +34,8 @@ class HiveStore {
     ) {
         if isNetworkReachable {
             hiveApiManager.getHives(onSuccess: { hives in
+                // TODO: This isn't a perfect solution. If a hive is deleted from another device, the CoreData
+                // DB will keep it around until deleted manually
                 // Transform the hives we've received into ManagedHives and insert them
                 _ = hives.map({
                     let managedHive = ManagedHive(context: self.coreDataContext)
@@ -76,7 +82,38 @@ class HiveStore {
                 }
             }, onError: onError, completion: completion)
         } else {
-            
+            // Add the ID to the pending deletions
+            let pendingDeletion = ManagedPendingDeletionHive(context: coreDataContext)
+            pendingDeletion.id = id
+            // Remove the ManagedHive from local data
+            let fetchRequest: NSFetchRequest<ManagedHive> = ManagedHive.fetchRequest()
+            fetchRequest.fetchLimit = 1
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            if let hive = try? self.coreDataContext.fetch(fetchRequest).first {
+                // Remove the hive from CoreData
+                self.coreDataContext.delete(hive)
+            }
+            try? coreDataContext.save()
+            onSuccess()
         }
+    }
+    
+    /// Submits the pending deletions and removes the objects from the local database
+    func processPendingDeletions(completion: @escaping () -> Void) {
+        let fetchRequest: NSFetchRequest<ManagedPendingDeletionHive> = ManagedPendingDeletionHive.fetchRequest()
+        let pendingDeletions = try? self.coreDataContext.fetch(fetchRequest)
+        let dispatchGroup = DispatchGroup()
+        
+        for pendingDeletion in pendingDeletions ?? [] {
+            guard let id = pendingDeletion.id else { continue }
+            dispatchGroup.enter()
+            hiveApiManager.deleteHive(id: id, onSuccess: {}, onError: { _ in }, completion: {
+                self.coreDataContext.delete(pendingDeletion)
+                dispatchGroup.leave()
+            })
+        }
+        try? self.coreDataContext.save()
+        
+        dispatchGroup.notify(queue: .main, execute: completion)
     }
 }

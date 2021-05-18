@@ -11,7 +11,11 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="ManagedPendingDeletionHive" representedClassName="ManagedPendingDeletionHive" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+    </entity>
     <elements>
         <element name="ManagedHive" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="ManagedPendingDeletionHive" positionX="-348.31640625" positionY="30.953125" width="128" height="43"/>
     </elements>
 </model>

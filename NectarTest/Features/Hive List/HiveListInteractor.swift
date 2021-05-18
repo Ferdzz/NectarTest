@@ -47,7 +47,9 @@ class HiveListInteractor {
 extension HiveListInteractor: HiveListInteractorProtocol {
     
     func onViewDidLoad() {
-        self.fetchData()
+        self.hiveStore.processPendingDeletions {
+            self.fetchData()
+        }
     }
     
     func onTapDelete(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {

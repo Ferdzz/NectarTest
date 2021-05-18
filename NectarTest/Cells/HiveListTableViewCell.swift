@@ -32,7 +32,7 @@ class HiveListTableViewCell: UITableViewCell {
             self.iconImageView.kf.indicatorType = .activity
             self.iconImageView.kf.setImage(
                 with: imageUrl,
-                options: [.cacheMemoryOnly, .transition(.fade(0.3))])
+                options: [.cacheMemoryOnly, .transition(.fade(0.3)), .onFailureImage(UIImage(named: "error"))])
         }
         self.nameLabel.text = hive.name
     }
