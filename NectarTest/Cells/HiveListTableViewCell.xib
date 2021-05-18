@@ -29,9 +29,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfZ-e6-Hua">
+                        <rect key="frame" x="0.0" y="0.0" width="524" height="143"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kvz-DM-11R">
+                            <rect key="frame" x="0.0" y="0.0" width="524" height="143"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="N97-zx-pVq">
+                                    <rect key="frame" x="243.5" y="53" width="37" height="37"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="N97-zx-pVq" firstAttribute="centerY" secondItem="kvz-DM-11R" secondAttribute="centerY" id="VHK-3F-gTz"/>
+                                <constraint firstItem="N97-zx-pVq" firstAttribute="centerX" secondItem="kvz-DM-11R" secondAttribute="centerX" id="maI-ja-oV2"/>
+                            </constraints>
+                        </view>
+                        <blurEffect style="regular"/>
+                    </visualEffectView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wfZ-e6-Hua" secondAttribute="trailing" id="3wo-cm-HiX"/>
+                    <constraint firstAttribute="bottom" secondItem="wfZ-e6-Hua" secondAttribute="bottom" id="CTI-zv-DZa"/>
+                    <constraint firstItem="wfZ-e6-Hua" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="F0z-rv-cgT"/>
                     <constraint firstAttribute="trailing" secondItem="WWj-p0-Ny4" secondAttribute="trailing" constant="24" id="FEK-e0-UUt"/>
+                    <constraint firstItem="wfZ-e6-Hua" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UWd-9b-1BW"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7Hy-Jv-Uqr" secondAttribute="bottom" constant="8" id="XSU-4L-LV1"/>
                     <constraint firstItem="7Hy-Jv-Uqr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Xg5-es-IqH"/>
                     <constraint firstItem="7Hy-Jv-Uqr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="i2G-B1-E4F"/>
@@ -44,6 +65,8 @@
             </constraints>
             <connections>
                 <outlet property="iconImageView" destination="7Hy-Jv-Uqr" id="rxL-ao-509"/>
+                <outlet property="loadingIndicator" destination="N97-zx-pVq" id="gXO-Fe-9pB"/>
+                <outlet property="loadingView" destination="wfZ-e6-Hua" id="Z5B-Ea-F8Q"/>
                 <outlet property="nameLabel" destination="WWj-p0-Ny4" id="AMU-ku-jnt"/>
             </connections>
             <point key="canvasLocation" x="317.39130434782612" y="169.75446428571428"/>

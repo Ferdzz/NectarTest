@@ -9,6 +9,7 @@ import Foundation
 
 protocol HiveListInteractorProtocol: class {
     func onViewDidLoad()
+    func onTapDelete(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void)
 }
 
 class HiveListInteractor {
@@ -31,10 +32,25 @@ class HiveListInteractor {
             self?.viewController?.displayLoading(shown: false)
         }
     }
+    
+    private func deleteHive(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        self.hiveApiManager.deleteHive(id: id) {
+            onSuccess()
+        } onError: { (error) in
+            onError()
+        } completion: {
+            // Nothing to do on completion
+        }
+    }
 }
 
 extension HiveListInteractor: HiveListInteractorProtocol {
+    
     func onViewDidLoad() {
         self.fetchData()
+    }
+    
+    func onTapDelete(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void) {
+        self.deleteHive(id: id, onSuccess: onSuccess, onError: onError)
     }
 }

@@ -65,6 +65,7 @@ extension HiveListViewController: UITableViewDataSource {
             preconditionFailure("Attempted to dequeue cell of unknown type")
         }
         cell.configure(hive: hives[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
 }
@@ -73,4 +74,34 @@ extension HiveListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("Label.Delete", comment: "")) {  (contextualAction, view, completion) in
+            let hive = self.hives[indexPath.row]
+            let cell = tableView.cellForRow(at: indexPath) as? HiveListTableViewCell
+            cell?.updateLoading(shown: true)
+            self.interactor.onTapDelete(id: hive.id) {
+                self.hives.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+                completion(true)
+            } onError: {
+                cell?.updateLoading(shown: false)
+                completion(false)
+            }
+
+            completion(true)
+        }
+        let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
+        
+        return swipeActions
+    }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let hiveId = hives[indexPath.row].id
+//            self.interactor.onTapDelete(id: hiveId)
+////            self.hives.remove(at: indexPath.row)
+////            tableView.deleteRows(at: [indexPath], with: .fade)
+//        }
+//    }
 }

@@ -12,7 +12,9 @@ class HiveListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-   
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,6 +23,7 @@ class HiveListTableViewCell: UITableViewCell {
     }
     
     func configure(hive: Hive) {
+        self.loadingView.isHidden = true
         // Little hack here, since identical API calls are merged during load we always get the same image.
         // Appending the ID solves this by making each call unique
         if let imageUrl = URL(string: hive.image.appending("/\(hive.id)")) {
@@ -32,5 +35,12 @@ class HiveListTableViewCell: UITableViewCell {
                 options: [.cacheMemoryOnly, .transition(.fade(0.3))])
         }
         self.nameLabel.text = hive.name
+    }
+    
+    func updateLoading(shown: Bool) {
+        self.loadingView.isHidden = !shown
+        if shown {
+            self.loadingIndicator.startAnimating()
+        }
     }
 }

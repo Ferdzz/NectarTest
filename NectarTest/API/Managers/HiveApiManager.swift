@@ -12,16 +12,19 @@ class HiveApiManager: BaseApiManager {
     
     private enum Path {
         case getHives
+        case deleteHive(id: String)
         
         var url: String {
             switch self {
             case .getHives: return "hives/"
+            case .deleteHive(let id): return "hives/\(id)"
             }
         }
         
         var method: HTTPMethod {
             switch self {
             case .getHives: return .get
+            case .deleteHive: return .delete
             }
         }
     }
@@ -36,4 +39,16 @@ class HiveApiManager: BaseApiManager {
         guard let url = URL(string: baseUrl.appending(path.url)) else { return }
         self.request(url: url, method: path.method, onSuccess: onSuccess, onError: onError, completion: completion)
     }
+    
+    func deleteHive(
+        id: String,
+        onSuccess: @escaping () -> Void,
+        onError: @escaping (Error) -> Void,
+        completion: @escaping () -> Void
+    ) {
+        let path = Path.deleteHive(id: id)
+        guard let url = URL(string: baseUrl.appending(path.url)) else { return }
+        self.request(url: url, method: path.method, onSuccess: onSuccess, onError: onError, completion: completion)
+    }
+    
 }

@@ -53,4 +53,29 @@ class BaseApiManager {
             completion()
         }
     }
+    
+    /// Sends a request through Alamofire to the specified URL without expecting a return body
+    /// - Parameters:
+    ///   - url: The URL to send the request to
+    ///   - method: The request method
+    ///   - onSuccess: Callback on success
+    ///   - onError: Callback on error, includes the API or local error
+    ///   - completion: Callback on completion, will be called regardless of success or error
+    func request(
+        url: URL,
+        method: HTTPMethod,
+        onSuccess: @escaping () -> Void,
+        onError: @escaping (Error) -> Void,
+        completion: @escaping () -> Void
+    ) {
+        AF.request(url, method: method).response { (response) in
+            if let error = response.error {
+                onError(error)
+            } else {
+                onSuccess()
+            }
+            
+            completion()
+        }
+    }
 }
