@@ -4,7 +4,7 @@
 3. Run the app through simulator, or change the signing and run on a physical device
 
 # Remarks
-The app is fairly basic. It's quick practice & challenge done in a single afternoon. It displays the a list of hives, the deletion, seeing the details and completely support deletion, even offline. I'm no UI designer, so the interface is simple but functional. 
+The app is fairly basic. It's quick practice & challenge done in an afternoon. It displays a list of hives, allows for seeing the hive details and completely supports deletion, even offline. I'm no UI designer, so the interface is simple but functional. 
 
 It supports iPhone used in prortrait mode.
 
