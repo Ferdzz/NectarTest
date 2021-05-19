@@ -7,5 +7,6 @@
 */
 
 "Label.Delete" = "Delete";
+"Label.CreatedOn" = "Created on: %@";
 
 "HiveList.Title" = "Your Hives";

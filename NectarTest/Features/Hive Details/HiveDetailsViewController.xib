@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HiveDetailsViewController" customModule="NectarTest" customModuleProvider="target">
+            <connections>
+                <outlet property="dateLabel" destination="aK5-PZ-R3d" id="Z0H-Nr-BO9"/>
+                <outlet property="imageView" destination="1RK-id-L0W" id="maw-Sa-P6p"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-3.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1RK-id-L0W">
+                    <rect key="frame" x="82" y="68" width="250" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="Mg0-YS-LFL"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK5-PZ-R3d">
+                    <rect key="frame" x="82" y="342" width="37.5" height="18"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1RK-id-L0W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6RY-wz-xe8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1RK-id-L0W" secondAttribute="trailing" constant="16" id="DtT-I4-Pkm"/>
+                <constraint firstItem="aK5-PZ-R3d" firstAttribute="top" secondItem="1RK-id-L0W" secondAttribute="bottom" constant="24" id="Rde-kZ-pSJ"/>
+                <constraint firstItem="aK5-PZ-R3d" firstAttribute="leading" secondItem="1RK-id-L0W" secondAttribute="leading" id="cy8-fW-MqB"/>
+                <constraint firstItem="1RK-id-L0W" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="fEg-yH-BFr"/>
+                <constraint firstItem="1RK-id-L0W" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="gn2-FZ-peM"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="106"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="kingfisher-3.jpg" width="250" height="250"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

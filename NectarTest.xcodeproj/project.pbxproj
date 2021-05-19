@@ -20,6 +20,8 @@
 		7DEF918326546983007AF3B1 /* HiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918226546983007AF3B1 /* HiveStore.swift */; };
 		7DEF918726546D6B007AF3B1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918526546D6B007AF3B1 /* Model.xcdatamodeld */; };
 		7DEF9190265471D8007AF3B1 /* PersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */; };
+		7DEF91A026548B14007AF3B1 /* HiveDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEF919E26548B14007AF3B1 /* HiveDetailsViewController.swift */; };
+		7DEF91A126548B14007AF3B1 /* HiveDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DEF919F26548B14007AF3B1 /* HiveDetailsViewController.xib */; };
 		C8E94D7B265403A600D6A2A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */; };
 		C8E94D7D265403A600D6A2A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */; };
 		C8E94D7F265403A600D6A2A0 /* HiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E94D7E265403A600D6A2A0 /* HiveListViewController.swift */; };
@@ -43,6 +45,8 @@
 		7DEF918226546983007AF3B1 /* HiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveStore.swift; sourceTree = "<group>"; };
 		7DEF918626546D6B007AF3B1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantContainer.swift; sourceTree = "<group>"; };
+		7DEF919E26548B14007AF3B1 /* HiveDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveDetailsViewController.swift; sourceTree = "<group>"; };
+		7DEF919F26548B14007AF3B1 /* HiveDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HiveDetailsViewController.xib; sourceTree = "<group>"; };
 		C8E94D77265403A600D6A2A0 /* NectarTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NectarTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E94D7A265403A600D6A2A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8E94D7C265403A600D6A2A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7D5951F92654279A00233F8C /* Hive List */,
+				7DEF919926548ABD007AF3B1 /* Hive Details */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -168,6 +173,15 @@
 				7DEF918F265471D8007AF3B1 /* PersistantContainer.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7DEF919926548ABD007AF3B1 /* Hive Details */ = {
+			isa = PBXGroup;
+			children = (
+				7DEF919E26548B14007AF3B1 /* HiveDetailsViewController.swift */,
+				7DEF919F26548B14007AF3B1 /* HiveDetailsViewController.xib */,
+			);
+			path = "Hive Details";
 			sourceTree = "<group>";
 		};
 		C8E94D6E265403A600D6A2A0 = {
@@ -270,6 +284,7 @@
 				C8E94D87265403A700D6A2A0 /* LaunchScreen.storyboard in Resources */,
 				7D59521326542B7100233F8C /* HiveListTableViewCell.xib in Resources */,
 				7D5952092654295400233F8C /* Localizable.strings in Resources */,
+				7DEF91A126548B14007AF3B1 /* HiveDetailsViewController.xib in Resources */,
 				C8E94D84265403A700D6A2A0 /* Assets.xcassets in Resources */,
 				C8E94D82265403A600D6A2A0 /* Main.storyboard in Resources */,
 			);
@@ -294,6 +309,7 @@
 				7DEF916C26544A57007AF3B1 /* HiveListInteractor.swift in Sources */,
 				7DEF918726546D6B007AF3B1 /* Model.xcdatamodeld in Sources */,
 				7DEF9154265430B5007AF3B1 /* Hive.swift in Sources */,
+				7DEF91A026548B14007AF3B1 /* HiveDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

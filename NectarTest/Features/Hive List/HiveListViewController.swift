@@ -65,7 +65,6 @@ extension HiveListViewController: UITableViewDataSource {
             preconditionFailure("Attempted to dequeue cell of unknown type")
         }
         cell.configure(hive: hives[indexPath.row])
-        cell.selectionStyle = .none
         return cell
     }
 }
@@ -73,6 +72,13 @@ extension HiveListViewController: UITableViewDataSource {
 extension HiveListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let hive = self.hives[indexPath.row]
+        let viewController = HiveDetailsViewController(hive: hive)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -95,13 +101,4 @@ extension HiveListViewController: UITableViewDelegate {
         
         return swipeActions
     }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            let hiveId = hives[indexPath.row].id
-//            self.interactor.onTapDelete(id: hiveId)
-////            self.hives.remove(at: indexPath.row)
-////            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
 }

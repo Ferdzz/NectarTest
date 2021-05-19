@@ -7,5 +7,6 @@
 */
 
 "Label.Delete" = "Retirer";
+"Label.CreatedOn" = "Ajouté le: %@";
 
 "HiveList.Title" = "Vos ruches";
