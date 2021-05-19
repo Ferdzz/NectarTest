@@ -1,42 +1,18 @@
-# iOS Profeciency test
+# Setup
+1. Clone the project
+2. Open the .xcproj file
+3. Run the app through simulator, or change the signing and run on a physical device
 
-Build an application that resolves following user stories:
+# Remarks
+The app is fairly basic. It's quick practice & challenge done in a single afternoon. It displays the a list of hives, the deletion, seeing the details and completely support deletion, even offline. I'm no UI designer, so the interface is simple but functional. 
 
-## User stories
+It supports iPhone used in prortrait mode.
 
-- As a user I would like to see a list of hives
-- As a user I would like to delete a hive
-- As a user I would like to access my hives list while offline
-- As a user I would like to be able to delete my hives while offline
+This is not a fully polished project. A lot of improvements could be made but I haven't had the time to get around to all of them. I left TODOs throughout the code where relevant.
 
-## Test rules
-
-- You can use external libraries such a cocoapods
-- All codes must be commited within 24 hours of receving the test link
-
-## Installation
-
-Clone the following repository: git@bitbucket.org:exerepo/iosdevtest.git
-
-## Api access
-
-Base URL: https://60a3cfee7c6e8b0017e27f64.mockapi.io/api/v1/
-
-| METHOD | PATH       |
-| ------ | ---------- |
-| GET    | /hives     |
-| GET    | /hives/:id |
-| POST   | /hives     |
-| PUT    | /hives/:id |
-| DELETE | /hives/:id |
-
-### Model
-
-```sh
-{
-    "id": "1",
-    "createdAt": "2021-05-18T04:04:51.927Z",
-    "name": "Common Eider",
-    "image": "http://placeimg.com/640/480/nature"
-}
-```
+# Screenshots
+![Screen Shot 2021-05-18 at 8 37 01 PM](https://user-images.githubusercontent.com/7923672/118740047-e1166800-b818-11eb-9c5e-c88263e0247e.png)
+![Screen Shot 2021-05-18 at 8 37 05 PM](https://user-images.githubusercontent.com/7923672/118740051-e378c200-b818-11eb-88bf-a282e165b6ff.png)
+![Screen Shot 2021-05-18 at 8 37 09 PM](https://user-images.githubusercontent.com/7923672/118740054-e70c4900-b818-11eb-90fd-5917cdc55ad7.png)
+![Screen Shot 2021-05-18 at 8 37 14 PM](https://user-images.githubusercontent.com/7923672/118740057-e96ea300-b818-11eb-86f7-4d37757db92b.png)
+![Screen Shot 2021-05-18 at 8 38 08 PM](https://user-images.githubusercontent.com/7923672/118740074-f55a6500-b818-11eb-97ca-34b2f7278958.png)
