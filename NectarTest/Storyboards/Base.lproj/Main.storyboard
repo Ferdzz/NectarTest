@@ -41,18 +41,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="iUR-cs-0YV"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="llC-2P-E30">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ufG-9V-8Ih" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1Tg-kO-5Pd"/>
                             <constraint firstItem="ufG-9V-8Ih" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8aL-bg-f7w"/>
+                            <constraint firstItem="llC-2P-E30" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HUw-fG-qcz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ufG-9V-8Ih" secondAttribute="trailing" id="JmS-3N-JYn"/>
+                            <constraint firstItem="llC-2P-E30" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aea-VH-Pky"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ufG-9V-8Ih" secondAttribute="bottom" id="zwG-kJ-Hq8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Khe-YC-j6H"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="llC-2P-E30" id="NKf-WI-Vt8"/>
                         <outlet property="tableView" destination="ufG-9V-8Ih" id="u2Q-p3-FOj"/>
                     </connections>
                 </viewController>

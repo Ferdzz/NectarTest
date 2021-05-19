@@ -9,6 +9,7 @@ import Foundation
 
 protocol HiveListInteractorProtocol: class {
     func onViewDidLoad()
+    func onRefresh(completion: @escaping () -> Void)
     func onTapDelete(id: String, onSuccess: @escaping () -> Void, onError: @escaping () -> Void)
 }
 
@@ -22,14 +23,15 @@ class HiveListInteractor {
         self.viewController = viewController
     }
     
-    private func fetchData() {
-        self.viewController?.displayLoading(shown: true)
+    private func fetchData(displayLoading: Bool = true, completion: @escaping () -> Void) {
+        self.viewController?.displayLoading(shown: displayLoading)
         self.hiveStore.getHives { [weak self] (hives) in
             self?.viewController?.show(hives: hives.sorted(by: { $0.name < $1.name }))
         } onError: { [weak self] (error) in
             print(error) // TODO: Handle error
         } completion: { [weak self] in
             self?.viewController?.displayLoading(shown: false)
+            completion()
         }
     }
     
@@ -48,7 +50,13 @@ extension HiveListInteractor: HiveListInteractorProtocol {
     
     func onViewDidLoad() {
         self.hiveStore.processPendingDeletions {
-            self.fetchData()
+            self.fetchData(completion: {})
+        }
+    }
+    
+    func onRefresh(completion: @escaping () -> Void) {
+        self.hiveStore.processPendingDeletions {
+            self.fetchData(displayLoading: false, completion: completion)
         }
     }
     

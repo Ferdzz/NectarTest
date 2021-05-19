@@ -15,6 +15,7 @@ protocol HiveListViewControllerProtocol: class {
 class HiveListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private lazy var interactor: HiveListInteractorProtocol = {
         HiveListInteractor(viewController: self)
@@ -32,7 +33,12 @@ class HiveListViewController: UIViewController {
         
         // Set an empty footer so we don't have the ugly separator lines
         self.tableView.tableFooterView = UIView()
+        // Estimate row height so we get accurate bar scrolling
         self.tableView.estimatedRowHeight = 140
+        // Add a refresh control for swipe to refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(onRefresh(_:)), for: .valueChanged)
+        self.tableView.refreshControl = refreshControl
         
         // Register cells
         // TODO: Registering and dequeuing may be moved to an extension so we can register solely on type
@@ -40,11 +46,20 @@ class HiveListViewController: UIViewController {
         
         self.interactor.onViewDidLoad()
     }
+    
+    @objc private func onRefresh(_ sender: UIRefreshControl) {
+        self.interactor.onRefresh {
+            sender.endRefreshing()
+        }
+    }
 }
 
 extension HiveListViewController: HiveListViewControllerProtocol {
     func displayLoading(shown: Bool) {
-        // TODO
+        self.activityIndicator.isHidden = !shown
+        if shown {
+            self.activityIndicator.startAnimating()
+        }
     }
     
     func show(hives: [Hive]) {
@@ -76,6 +91,7 @@ extension HiveListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        // Open the details view when the row has been selected
         let hive = self.hives[indexPath.row]
         let viewController = HiveDetailsViewController(hive: hive)
         self.navigationController?.pushViewController(viewController, animated: true)
@@ -83,6 +99,7 @@ extension HiveListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("Label.Delete", comment: "")) {  (contextualAction, view, completion) in
+            // When the user presses delete, send a delete command and refresh the row once we have success
             let hive = self.hives[indexPath.row]
             let cell = tableView.cellForRow(at: indexPath) as? HiveListTableViewCell
             cell?.updateLoading(shown: true)
